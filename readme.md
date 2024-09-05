@@ -176,15 +176,7 @@ As rotas protegidas da API utilizam autenticação baseada em **JWT**. Para aces
 
    - **Resposta Esperada**:
      ```json
-     [
-       {
-         "_id": "123456",
-         "name": "Produto 1",
-         "description": "Descrição do Produto 1",
-         "price": 100.00
-       },
-       ...
-     ]
+     [ ]
      ```
 
 ---
