@@ -67,10 +67,6 @@ O projeto utiliza Docker e **Docker Compose** para facilitar o setup. Para rodar
    docker-compose logs -f
    ```
 
-4. **Derrubar os containers**:
-   ```bash
-   docker-compose down
-   ```
 
 ### **Passo 4: Acessar a API**
 A aplicação estará rodando em: `http://localhost:3000`.
