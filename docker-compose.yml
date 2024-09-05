@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:    
+      - MONGO_URI=mongodb://mongo:27017/
+      - JWT_SECRET=supersecretkey
+      - PORT=3000
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongodbdesafio
+    restart: always
+    image: mongo:4.4.3
+    ports:
+      - '27017:27017'     
+   
+  
+
+
+
+ 
+       
