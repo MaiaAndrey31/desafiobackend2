@@ -1,4 +1,4 @@
-# **Desafio Backend - Autenticação de Usuário e Listagem de Produtos**
+# **Desafio Backend 2 - Autenticação de Usuário e Listagem de Produtos**
 
 Este projeto implementa uma API RESTful utilizando **Node.js** com **TypeScript**, **MongoDB** via **Mongoose**, e autenticação com **JWT**. A API permite o cadastro de usuários, autenticação via login, e oferece rotas protegidas para listagem de produtos, com suporte a paginação e controle de taxa de requisições (**Rate-Limiting**).
 
@@ -29,7 +29,7 @@ cd desafiobackend2
 Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis de ambiente:
 
 ```plaintext
-MONGO_URI=mongodb://mongo:27017/
+MONGO_URI=mongodb://mongo:27017/mydb
 JWT_SECRET=supersecretkey
 PORT=3000
 ```
@@ -39,7 +39,18 @@ PORT=3000
 ### **Passo 3: Docker - Subir a Aplicação**
 O projeto utiliza Docker e **Docker Compose** para facilitar o setup. Para rodar a aplicação, siga os seguintes passos:
 
-#### **Comandos Docker**:
+#### **Comandos para Rodar a API com Docker**:
+
+1. Instalar dependências:
+   ```bash
+   npm install
+   ```
+
+2. Compilar o código TypeScript:
+   ```bash
+   npm run build
+
+ ### **Após isso Rodar os comandos para criar os Containers e iniciar a API no Docker**
 
 1. **Construir os containers**:
    ```bash
@@ -65,11 +76,6 @@ O projeto utiliza Docker e **Docker Compose** para facilitar o setup. Para rodar
 A aplicação estará rodando em: `http://localhost:3000`.
 
 ---
-
-   ```
-
-> A API rodará localmente na porta definida no arquivo `.env` (geralmente `3000`).
-
 ### **Rodar os Testes Unitários**
 ```bash
 npm run test
@@ -175,7 +181,13 @@ As rotas protegidas da API utilizam autenticação baseada em **JWT**. Para aces
    - **Resposta Esperada**:
      ```json
      [
-       
+       {
+         "_id": "123456",
+         "name": "Produto 1",
+         "description": "Descrição do Produto 1",
+         "price": 100.00
+       },
+       ...
      ]
      ```
 
@@ -226,3 +238,24 @@ Se houver qualquer problema ou dúvida, fique à vontade para contribuir ou abri
 
 ---
 
+## 📝 **Comandos Docker Recapitulados**
+
+- **Construir o projeto**:
+  ```bash
+  docker-compose build
+  ```
+
+- **Subir a aplicação em containers**:
+  ```bash
+  docker-compose up -d
+  ```
+
+- **Parar e remover os containers**:
+  ```bash
+  docker-compose down
+  ```
+
+- **Verificar os logs do container**:
+  ```bash
+  docker-compose logs -f
+  ```
